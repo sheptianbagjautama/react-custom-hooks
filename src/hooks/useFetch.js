@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { fetchUserPlaces } from "../http";
+import { useEffect, useState } from "react";
 
 export function useFetch(fetchFn, initialValue){
     const [isFetching, setIsFetching] = useState();
@@ -19,7 +18,7 @@ export function useFetch(fetchFn, initialValue){
           setIsFetching(false);
         }
     
-        fetchPlaces();
+        fetchData();
       }, [fetchFn]);
 
       return {
